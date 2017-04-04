@@ -20,3 +20,16 @@ import pickle
 enron_data = pickle.load(open("../final_project/final_project_dataset.pkl", "r"))
 
 
+print ('# enron people: ' + str(len(enron_data)))
+
+print ('# features: ' + str(len(enron_data['METTS MARK'].keys())))
+
+count = 0
+for person in enron_data:
+    if (enron_data[person]["poi"] == 1):
+        count = count + 1
+        print person
+
+print ('# POIs: ' + str(count))
+# for key, value in enron_data.items():
+#     if(enron_data[person_name]["poi"]==1):
