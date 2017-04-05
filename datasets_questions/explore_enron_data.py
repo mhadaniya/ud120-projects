@@ -24,12 +24,31 @@ print ('# enron people: ' + str(len(enron_data)))
 
 print ('# features: ' + str(len(enron_data['METTS MARK'].keys())))
 
+poi = list()
 count = 0
 for person in enron_data:
     if (enron_data[person]["poi"] == 1):
+        poi.append(person)
         count = count + 1
         print person
 
 print ('# POIs: ' + str(count))
-# for key, value in enron_data.items():
-#     if(enron_data[person_name]["poi"]==1):
+
+names_file = open('../final_project/poi_names.txt', "r")
+names_file.readline()
+names_file.readline()
+names = list()
+
+for line in names_file:
+    names.append(line)
+
+for person in poi:
+    
+    print(person.split()[0].lower())
+    
+    
+# print ('#names len ' + str(len(names)))
+# print (names[1])
+
+# for n in names:
+#     print(n)
